@@ -119,3 +119,6 @@ results/
 
 # vim
 *.swp
+
+# custom
+dataset/

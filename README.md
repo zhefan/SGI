@@ -15,13 +15,27 @@ export LANG=C.UTF-8
 # Install requirements
 pip install torch==1.8.1+cu111 torchvision==0.9.1+cu111 -f https://download.pytorch.org/whl/torch_stable.html
 pip install -r requirements.txt
-
 # Finally, install the project
 pip install --user -e .
 ```
 
 ## Usage:
 The default branch for the latest and stable changes is `release`. 
+
+0.  Download dataset
+
+```bash
+# Install gsutil (https://cloud.google.com/storage/docs/gsutil_install#deb)
+sudo apt-get install apt-transport-https ca-certificates gnupg
+echo "deb [signed-by=/usr/share/keyrings/cloud.google.gpg] https://packages.cloud.google.com/apt cloud-sdk main" | sudo tee -a /etc/apt/sources.list.d/google-cloud-sdk.list
+curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyring /usr/share/keyrings/cloud.google.gpg add -
+sudo apt-get update && sudo apt-get install google-cloud-cli
+
+# download DQN dataset
+mkdir dataset/
+gsutil -m cp -R gs://atari-replay-datasets/dqn/Seaquest dataset/
+gsutil -m cp -R gs://atari-replay-datasets/dqn/DemonAttack dataset/
+```
 
 To run SGI:
 1.  Use the helper script to download and parse checkpoints from the [DQN Replay Dataset](https://research.google/tools/datasets/dqn-replay/); this requires [gsutil](https://cloud.google.com/storage/docs/gsutil_install#install) to be installed. You may want to modify the script to download fewer checkpoints from fewer games, as otherwise this requires significant storage.
