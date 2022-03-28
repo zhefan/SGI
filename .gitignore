@@ -121,4 +121,6 @@ results/
 *.swp
 
 # custom
-dataset/
+data/
+logs/
+observation_*.npy
