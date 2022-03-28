@@ -33,8 +33,8 @@ sudo apt-get update && sudo apt-get install google-cloud-cli
 
 # download DQN dataset
 mkdir dataset/
-gsutil -m cp -R gs://atari-replay-datasets/dqn/Seaquest dataset/
-gsutil -m cp -R gs://atari-replay-datasets/dqn/DemonAttack dataset/
+#gsutil -m cp -R gs://atari-replay-datasets/dqn/Seaquest dataset/
+#gsutil -m cp -R gs://atari-replay-datasets/dqn/DemonAttack dataset/
 ```
 
 To run SGI:
