@@ -32,7 +32,7 @@ curl https://packages.cloud.google.com/apt/doc/apt-key.gpg | sudo apt-key --keyr
 sudo apt-get update && sudo apt-get install google-cloud-cli
 
 # download DQN dataset
-mkdir dataset/
+mkdir data/
 #gsutil -m cp -R gs://atari-replay-datasets/dqn/Seaquest dataset/
 #gsutil -m cp -R gs://atari-replay-datasets/dqn/DemonAttack dataset/
 ```
