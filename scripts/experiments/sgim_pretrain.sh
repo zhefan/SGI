@@ -4,6 +4,8 @@ export game=$1
 shift
 export seed=$1
 
+mkdir -p ./exp/$game
+
 python -m scripts.run public=True model_folder=./ offline.runner.save_every=2500 \
     env.game=$game seed=$seed offline_model_save=sgim_${game}_resnet_${seed} \
     offline.runner.epochs=20 offline.runner.dataloader.games=[${map[${game}]}] \
@@ -21,4 +23,4 @@ python -m scripts.run public=True model_folder=./ offline.runner.save_every=2500
     offline.runner.dataloader.checkpoints='[1,25,50]' \
     offline.runner.dataloader.num_workers=2 \
     offline.runner.dataloader.data_path=./data/ \
-    offline.runner.dataloader.tmp_data_path=./
+    offline.runner.dataloader.tmp_data_path=./exp/$game
