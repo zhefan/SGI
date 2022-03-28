@@ -123,4 +123,5 @@ results/
 # custom
 data/
 logs/
+exp/
 observation_*.npy
