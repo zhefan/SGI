@@ -5,7 +5,7 @@ shift
 export seed=$1
 
 python -m scripts.run public=True model_folder=./ offline.runner.save_every=2500 \
-    env.game=pong seed=1 offline_model_save=sgim_${game}_resnet_${seed} \
+    env.game=$game seed=$seed offline_model_save=sgim_${game}_resnet_${seed} \
     offline.runner.epochs=20 offline.runner.dataloader.games=[${map[${game}]}] \
     offline.runner.no_eval=1 \
     +offline.algo.goal_weight=1 \

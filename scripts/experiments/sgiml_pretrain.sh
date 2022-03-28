@@ -5,7 +5,7 @@ shift
 export seed=$1
 
 python -m scripts.run public=True model_folder=./ offline.runner.save_every=2500 \
-    env.game=pong seed=1 offline_model_save=sgiml_${game}_resnet_${seed} \
+    env.game=$game seed=$seed offline_model_save=sgiml_${game}_resnet_${seed} \
     agent.model_kwargs.blocks_per_group=5 agent.model_kwargs.expand_ratio=4 \
     agent.model_kwargs.cnn_scale_factor=1.5 \
     offline.runner.epochs=10 offline.runner.dataloader.games=[${map[${game}]}] \
