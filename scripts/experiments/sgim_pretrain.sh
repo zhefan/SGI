@@ -3,6 +3,8 @@ declare -A map=( ["pong"]="Pong" ["breakout"]="Breakout" ["up_n_down"]="UpNDown"
 export game=$1
 shift
 export seed=$1
+shift
+export nload=$1
 
 mkdir -p ./exp/$game
 
@@ -21,6 +23,6 @@ python -m scripts.run public=True model_folder=./ offline.runner.save_every=2500
     offline.runner.dataloader.dataset_on_disk=True \
     offline.runner.dataloader.samples=1000000 \
     offline.runner.dataloader.checkpoints='[1,25,50]' \
-    offline.runner.dataloader.num_workers=2 \
+    offline.runner.dataloader.num_workers=$nload \
     offline.runner.dataloader.data_path=./data/ \
     offline.runner.dataloader.tmp_data_path=./exp/$game

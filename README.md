@@ -38,6 +38,12 @@ mkdir data/
 ```
 
 To run SGI:
+
+```bash
+# args are game, seed, and number of dataloader
+bash ./scripts/experiments/sgim_pretrain.sh demon_attack 1 8
+```
+
 1.  Use the helper script to download and parse checkpoints from the [DQN Replay Dataset](https://research.google/tools/datasets/dqn-replay/); this requires [gsutil](https://cloud.google.com/storage/docs/gsutil_install#install) to be installed. You may want to modify the script to download fewer checkpoints from fewer games, as otherwise this requires significant storage.
     * Or substitute your own pre-training data!  The codebase expects a series of .gz files, one each for observations, actions and terminals.
 ```bash
